@@ -11,3 +11,25 @@ For your Part 3, you should
 * In that GitHub repository, online, create milestones and issues to lay out the process of your final project, the way you did in [section](https://github.com/SI507-F17/section-week-5) on a few occasions.
 
 * We'll grade this on whether you tried it, but we'll also offer feedback about whether your final project sounds doable/sounds like it's scoped reasonably/if your plan sounds solid/if we have brief recommendations.
+
+
+
+## Part Final Project Milestones
+### Part 1:
+
+- [ ]
+- Code file: `.py`
+- [ ] Extract data from the "Front Page" news articles including:
+    - Title
+    - Author(s)
+    - Date
+    - Summary
+    - Thumbnail
+- What data structure will you save this extracted data in? Class / Dictionary / List / List of Dictionaries?
+- For each Front Page article
+    - [ ] Get (and cache) that article's web page
+    - [ ] Extract its related coverage of articles, and
+    - [ ] Save its title, thumbnail, date, and link (What data structure will you use? Where will you save it?)
+
+### Part 2:
+
