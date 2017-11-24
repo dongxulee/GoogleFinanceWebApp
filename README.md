@@ -1,6 +1,5 @@
 # SI507F17_finalProject
 # Requirement:
-## Part Final Project Milestones
 
 [Here](https://paper.dropbox.com/doc/SI-507-Fall-2017-Final-Project-XwIGPUCZrTaBNTT75uU4B) are your final project requirements. We'll be updating them with increased clarity (e.g. how many points go with what) over the next week or so.
 
