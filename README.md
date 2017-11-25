@@ -13,7 +13,7 @@ SQL language to retrieve information from the database, I can apply some basic s
 
 ### Part 2: Applying googlefinance.client to get stock info
 - [ ] Pip install googlefinance.client, play with the api, exploring the valuable infor I might be interested.
-- [ ] Start to exact data and do some basic visulization tryout.
+- [ ] Start to exact data and do some basic visualization tryout.
 
 ### Part 3: Database setup and conduct data query test
 - [ ] Design the database structure.
