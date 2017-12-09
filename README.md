@@ -6,7 +6,7 @@ SQL language to retrieve information from the database, I can apply some basic s
 
 ## Final Project Milestones
 ### Part 1: Get all tickers of all S&P 500
-- [ ] Vitual environment setup, create the
+- [ ] Vitual environment setup, create the requirement.txt.
 - [ ] Analyzing stock tickers info on wiki page: https://en.wikipedia.org/wiki/List_of_S%26P_500_companies.
 - [ ] Using BeautifulSoup to extract tickers from the wiki page.
 - [ ] Processing the ticker data we get and make sure they are in the right format and store them in the csv file.
