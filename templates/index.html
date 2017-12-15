@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Stock List</title>
+	</head>
+
+	<body>
+		<h1>Stock List Of S&P 500</h1>
+		<p>Complete List Below: </p>
+			{% for row in rows %}
+			<tr>
+				<td>{{ row.name }}</td>
+			</tr>
+			{% endfor %}
+	</body>
+
+	<p>Select or type the stock you are interested: </p>
+	<form action="/plot" method="get">
+		<input list="stocklist" name="stock">
+		<datalist id="stocklist">
+			{% for row in rows %}
+			<option value = {{ row.name }}>
+			{% endfor %}
+		</datalist>
+		<input type="submit">
+	</form>
+</html>

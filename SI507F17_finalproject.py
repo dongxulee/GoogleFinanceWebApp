@@ -1,9 +1,29 @@
-from get_market_data import get_data
-'''
-		- store all the data in the csv file, under the stock_dfs folder
-		- default time frame is 1M, it could also be 1Y, 1D, etc, you can refer to googlefinance for more info
-		- default frequency is 86400 second, which is 1 day intervals
-		- default input of reload_sp500 is False. If it is true, all tickers will be renewed.
-		renew the database, delete all stock files, all stock data
-'''
-get_data(reload_sp500 = False, frequency = '86400', period = '1M')
+from database import dataBaseConstuct
+from retrieveData import retriveStockData
+import pandas as pd
+import plotly
+from plotly import figure_factory as FF
+from plotly.graph_objs import *
+import plotly.graph_objs as go
+
+# data base construction is used to initialize two tables describe in the file
+# if cachData = True, we will cachData from the google fiance, otherwise we just
+# use the cached data stored in the csv files under stock_dfs folder.
+
+dataBaseConstuct(cachData = False)
+
+
+def correlation_table(tickers):
+	'''
+		calculate the close price correlation table for selected stock
+	'''
+	df = pd.DataFrame()
+	for ticker in stocks:
+		df[ticker] = retriveStockData(ticker).info.close
+	correlation = df.corr().values.tolist()
+	trace = go.Heatmap(z = correlation, x = tickers, y = tickers)
+	data=[trace]
+	plotly.offline.plot(data, filename = 'correlation_table.html', auto_open=False)
+
+stocks = ['GOOG','MSFT','IBM','AAPL','FB','ORCL','AMZN']
+correlation_table(stocks)

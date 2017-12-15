@@ -2,15 +2,19 @@ import pandas as pd
 import pickle
 import os
 import save_tickers
-from googlefinance.client import get_price_data, get_prices_time_data
+from googleclient import get_price_data
 
-def get_data(reload_sp500 = False, frequency = '86400', period = '1M'):
+def get_data(reload_sp500, frequency, period):
 	'''
-		- store all the data in the csv file, under the stock_dfs folder
-		- default time frame is 1M, it could also be 1Y, 1D, etc, you can refer to googlefinance for more info
+		- store all the data in the csv file, under the stock_dfs folder, this count
+		the part of data caching process. So when constructing the databse, I have
+		the option to constuct the database on the csvfile instead of directly
+		request from API.
+		- default time frame is 1M, it could also be 1Y, 1D, etc, you can refer to
+		googlefinance for more info.
 		- default frequency is 86400 second, which is 1 day intervals
-		- default input of reload_sp500 is False. If it is true, all tickers will be renewed.
-		renew the database, delete all stock files, all stock data
+		- default input of reload_sp500 is False. If it is true, all tickers will
+		be renewed, and request from wiki page.
 	'''
 	filelist = [f for f in os.listdir("./stock_dfs") if f.endswith(".csv")]
 	for f in filelist:
@@ -28,9 +32,9 @@ def get_data(reload_sp500 = False, frequency = '86400', period = '1M'):
 		print(ticker)
 		param = {
 			'q': ticker, # Stock symbol (ex: "AAPL")
-			'i': "86400", # Interval size in seconds ("86400" = 1 day intervals)
-			'x': "INDEXSP", # Stock exchange symbol on which stock is traded (ex: "NASD")
-			'p': "1M" # Period (Ex: "1Y" = 1 year)
+			'i': frequency, # Interval size in seconds ("86400" = 1 day intervals)
+			'x': "", # Stock exchange symbol on which stock is traded, can be ""
+			'p': period # Period (Ex: "1Y" = 1 year)
 		}
 		# just in case the connection breaks, we'd like to save our progress!
 		if not os.path.exists('stock_dfs/{}.csv'.format(ticker)):
