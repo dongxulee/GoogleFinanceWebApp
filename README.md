@@ -24,8 +24,8 @@ db_password = ' '
 - If you want to update the caching data, you can open __SI507F17_finalproject.py__ file and follow the instruction for __dataBaseConstuct()__ function. If you want to cache the new data from the web, please be patient, because this may take up to 4 minutes, since there are 3 month data for 505 stocks. You can keep track of the process in the command window output.
 - After successfully ran the program, you can get an __correlation_table.html__ file, you can use the web browser to open the file and you get something like this:
 <img width="957" alt="screen shot 2017-12-14 at 21 19 49" src="https://user-images.githubusercontent.com/26841080/34023815-ec7ed51c-e114-11e7-97cd-97a10aeafea0.png">
-- The image above is a correlation table visualization of the stocks specified in the __SI507F17_finalproject.py__ file, you can select the stock you like by make change in this file. The default stock list:  
-stocks = ['GOOG','MSFT','IBM','AAPL','FB','ORCL','AMZN'].
+- The image above is a correlation table visualization of the stocks specified in the __SI507F17_finalproject.py__ file, you can select the stock you like by make change in this file. 
+The default stock list: stocks = ['GOOG','MSFT','IBM','AAPL','FB','ORCL','AMZN'].
 
 ### Step 3: Runing the Web App using flask framework
 - In the terminal, typing ```python webApp.py runserver``` to start the web application.
