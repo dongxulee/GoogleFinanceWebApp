@@ -1,4 +1,3 @@
-# SI507F17_finalProject(self-conduct project)
 ## Stock Info database for S&P 500 stock:
 For this project, my purpose is to create a stock infomation database for all the stock in s&p 500. Through
 SQL language to retrieve information from the database, I can apply some basic stock price data visulization methods: pricing plot through a certain time window, and correlation table for chosen stocks. And I also developed a web running on the local server. User can select the stock they are interested in and get more infomation from the stock open high low close price for most recent 3 month.
